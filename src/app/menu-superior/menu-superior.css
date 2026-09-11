@@ -1,0 +1,17 @@
+.header-nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+@media (max-width: 767.98px) {
+  .header-nav {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5rem;
+  }
+
+  .header-nav .nav {
+    flex-wrap: wrap;
+  }
+}
