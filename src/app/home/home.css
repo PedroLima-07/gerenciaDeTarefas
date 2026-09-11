@@ -1,0 +1,10 @@
+.ativo{
+    background-color: green;
+    border-radius: 15px;
+    color: white;
+}
+.inativo{
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+}

@@ -1,1 +1,43 @@
-<p>home works!</p>
+
+<input type="text" [(ngModel)]="nome" placeholder="Digite o nome do cliente" />
+<button (click)="adicionarTarefa()">Adicionar</button>
+@if (mostrarTabela) {
+  <div class="row">
+    <div class="col-12">
+        <input class="form-control" type="text" [(ngModel)]="adicionar" placeholder="Digite o nome da tarefa" />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tarefa of listaTarefas; track tarefa.id) {
+            <tr>
+              <td>{{ tarefa.id }}</td>
+              <td [style]="{'background-color' : tarefa.nome ==adicionar ? 'yellow' : 'transparent'}">
+                {{ tarefa.nome }}
+              </td>
+              <td [ngClass]="{ 'ativo': tarefa.ativo, 'inativo': !tarefa.ativo }">
+                {{ tarefa.ativo ? 'Ativo' : 'Inativo' }}
+              </td>
+              <td>
+                @switch (tarefa.ativo) {
+                  @case (true) {
+                    <Button (click)="tarefa.ativo=!tarefa.ativo" class="btn btn-danger">Desativar</Button>
+                  }
+                  @case (false) {
+                    <Button (click)="tarefa.ativo=!tarefa.ativo" class="btn btn-success">Ativar</Button>
+                  }
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+}
