@@ -1,0 +1,22 @@
+<header class="header-nav py-3 mb-4 border-bottom container">
+  <div class="header-logo">
+    <a routerLink="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+      <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+    </a>
+  </div>
+
+  <ul class="nav justify-content-center gap-1">
+    <li class="nav-item">
+      <a
+        routerLink="/home"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="bg-primary text-white fw-semibold rounded-3"
+        class="nav-link link-dark px-3"
+      >
+        Home
+      </a>
+    </li>
+  </ul>
+</header>
